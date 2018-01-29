@@ -1,5 +1,6 @@
-import {Component, Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {Message} from "./message.model";
+import {JQueryStyleEventEmitter} from "rxjs/observable/FromEventObservable";
 
 @Component({
     selector: 'app-message',
@@ -22,4 +23,9 @@ import {Message} from "./message.model";
 
 export class MessageComponent {
     @Input() message: Message;
+    @Output() editClicked = new EventEmitter<string>();
+
+    onEdit() {
+        this.editClicked.emit('A new value');
+    }
 }

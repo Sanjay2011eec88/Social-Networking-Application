@@ -7,5 +7,5 @@ import {Message} from "./messages/message.model";
 
 })
 export class AppComponent {
-    message: Message = new Message('Some message', 'San')
+    message: Message = new Message('Some message', 'San');
 }
