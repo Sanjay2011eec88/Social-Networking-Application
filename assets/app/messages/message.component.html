@@ -1,5 +1,4 @@
-<input type="text" [(ngModel)]="message.content">
-<article class="panel panel-default">
+<article class="panel panel-default" [ngStyle]="{backgroundColor: color}" (mouseenter)="color='green'" (mouseleave)="color='blue'">
     <div class="panel-body">
         {{ message.content }}
     </div>
