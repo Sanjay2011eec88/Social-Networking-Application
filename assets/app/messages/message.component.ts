@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {Message} from "./message.model";
 import {JQueryStyleEventEmitter} from "rxjs/observable/FromEventObservable";
 import {MessageService} from "./message.service";
@@ -24,16 +24,13 @@ import {MessageService} from "./message.service";
 
 export class MessageComponent {
     @Input() message: Message;
-    @Output() editClicked = new EventEmitter<string>();
 
-    constructor(private messageService: MessageService){
-
-    }
+    constructor(private messageService: MessageService){}
 
     color = 'red';
 
     onEdit() {
-        this.editClicked.emit('A new value');
+        this.messageService.editMessae(this.message);
     }
 
     onDelete(){
